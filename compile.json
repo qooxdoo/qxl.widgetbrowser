@@ -11,7 +11,10 @@
             "include" : [ 
 			    "qx.theme.Modern",
  			    "qx.theme.Simple",
- 			    "qx.theme.Classic"
+ 			    "qx.theme.Classic",
+				"osparc.theme.OSparcBlue",
+				"osparc.theme.OSparcDark",
+				"sqv.theme.Clean"
 			], 
 			"parts" :
 			{
