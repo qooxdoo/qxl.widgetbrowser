@@ -1,0 +1,18 @@
+{
+  "libraries": [
+    {
+      "library_name": "versionlabel",
+      "library_version": "0.1.1",
+      "repo_name": "qooxdoo/qxl.versionlabel",
+      "repo_tag": "v0.1.1",
+      "path": "contrib/qooxdoo_qxl.versionlabel_v0.1.1"
+    },
+    {
+      "library_name": "formdemo",
+      "library_version": "0.1.1",
+      "repo_name": "qooxdoo/qxl.formdemo",
+      "repo_tag": "v0.1.1",
+      "path": "contrib/qooxdoo_qxl.formdemo_v0.1.1"
+    }
+  ]
+}

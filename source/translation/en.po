@@ -1,0 +1,91 @@
+#
+msgid ""
+msgstr "Project-Id-Version: 1.0\nReport-Msgid-Bugs-To: you@your.org\nPOT-Creation-Date: 2012-10-30 09:54+0100\nPO-Revision-Date: 2012-10-30 09:54+0100\nLast-Translator: you <you@your.org>\nLanguage-Team: Team <yourteam@your.org>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\n"
+
+#: qx/ui/table/Table.js:1987
+msgid "one row"
+msgid_plural "%1 rows"
+msgstr[0] ""
+msgstr[1] ""
+
+#: qx/ui/table/Table.js:1989
+msgid "one of one row"
+msgid_plural "%1 of %2 rows"
+msgstr[0] ""
+msgstr[1] ""
+
+#: qx/ui/control/ColorSelector.js:255
+msgid "Visual"
+msgstr ""
+
+#: qx/ui/control/ColorSelector.js:315
+msgid "Presets"
+msgstr ""
+
+#: qx/ui/control/ColorSelector.js:346
+msgid "Details"
+msgstr ""
+
+#: qx/ui/control/ColorSelector.js:357 qx/ui/control/ColorPopup.js:162
+msgid "Preview (Old/New)"
+msgstr ""
+
+#: qx/ui/control/ColorSelector.js:375
+msgid "Hex"
+msgstr ""
+
+#: qx/ui/control/ColorSelector.js:398
+msgid "RGB"
+msgstr ""
+
+#: qx/ui/control/ColorSelector.js:430
+msgid "HSB"
+msgstr ""
+
+#: qx/ui/control/ColorPopup.js:147
+msgid "Automatic"
+msgstr ""
+
+#: qx/ui/control/ColorPopup.js:155
+msgid "Open ColorSelector"
+msgstr ""
+
+#: qx/ui/control/ColorPopup.js:180
+msgid "OK"
+msgstr ""
+
+#: qx/ui/control/ColorPopup.js:185
+msgid "Cancel"
+msgstr ""
+
+#: qx/ui/control/ColorPopup.js:242
+msgid "Color Selector"
+msgstr ""
+
+#: qx/ui/control/ColorPopup.js:481
+msgid "Basic Colors"
+msgstr ""
+
+#: qx/ui/control/ColorPopup.js:487
+msgid "Recent Colors"
+msgstr ""
+
+#: qx/ui/control/DateChooser.js:258
+msgid "Last year"
+msgstr ""
+
+#: qx/ui/control/DateChooser.js:270
+msgid "Last month"
+msgstr ""
+
+#: qx/ui/control/DateChooser.js:282
+msgid "Next month"
+msgstr ""
+
+#: qx/ui/control/DateChooser.js:294
+msgid "Next year"
+msgstr ""
+
+#: qx/ui/table/columnmodel/Resize.js:197
+msgid "Reset column widths"
+msgstr ""
