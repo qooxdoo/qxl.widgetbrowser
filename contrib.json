@@ -13,20 +13,6 @@
       "repo_name": "qooxdoo/qxl.formdemo",
       "repo_tag": "v0.1.1",
       "path": "contrib/qooxdoo_qxl.formdemo_v0.1.1"
-    },
-    {
-      "library_name": "qx-osparc-theme",
-      "library_version": "0.4.0",
-      "repo_name": "ITISFoundation/qx-osparc-theme",
-      "repo_tag": "v0.4.0",
-      "path": "contrib/ITISFoundation_qx-osparc-theme_v0.4.0"
-    },
-    {
-      "library_name": "sqv-qxthemes",
-      "library_version": "1.0.0",
-      "repo_name": "sqville/sqv-qxthemes",
-      "repo_tag": "v1.0.0",
-      "path": "contrib/sqville_sqv-qxthemes_v1.0.0"
     }
   ]
 }
