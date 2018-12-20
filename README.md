@@ -1,4 +1,4 @@
-# qooxdoo/qxl.widgetbrowser
+# Qooxdoo Widget Browser
 
 A GUI framework application to show all widgets with different themes
 
