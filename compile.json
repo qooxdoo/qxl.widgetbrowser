@@ -11,14 +11,11 @@
             "include" : [ 
 			    "qx.theme.Modern",
  			    "qx.theme.Simple",
- 			    "qx.theme.Classic",
-				"osparc.theme.OSparcBlue",
-				"osparc.theme.OSparcDark",
-				"sqv.theme.Clean"
+ 			    "qx.theme.Classic"
 			], 
 			"parts" :
 			{
-			  "boot" :       {"include" : [ "qxl.widgetbrowser.Application", "qx.theme.Indigo" ]},
+			  "boot" :       {"include" : [ "qxl.widgetbrowser.Application"]},
  			  "tree" :       {"include" : [ "qxl.widgetbrowser.pages.Tree" ]},
 			  "list" :       {"include" : [ "qxl.widgetbrowser.pages.List" ]},
  			  "table" :      {"include" : [ "qxl.widgetbrowser.pages.Table" ]},
