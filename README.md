@@ -2,6 +2,10 @@
 
 A GUI framework application to show all widgets with different themes
 
+## Online version
+
+http://www.qooxdoo.org/qxl.widgetbrowser/
+
 ## Developing widgetbrowser
 Clone this repo and compile it:
 
