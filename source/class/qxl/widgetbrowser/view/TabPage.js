@@ -53,12 +53,6 @@ qx.Class.define("qxl.widgetbrowser.view.TabPage",
 
     // Load content of tab on "appear"
     this.addListenerOnce("appear", function() {
-
-      // Require part
-      var part = classname.split(".").pop().toLowerCase();
-
-      qx.io.PartLoader.require([part], function() {
-        // Finally, instantiate class
         var clazz = qx.Class.getByName(classname);
         var pageContent = new clazz();
         // Add to page
@@ -67,7 +61,6 @@ qx.Class.define("qxl.widgetbrowser.view.TabPage",
         this.initControls(pageContent.getWidgets(), controls);
         // Exclude loading indicator
         loading.setVisibility("excluded");
-      }, this);
     }, this);
 
     // Show centered loading indicator
