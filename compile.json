@@ -26,7 +26,6 @@
          ]
       }
    ],
-
    /** Targets */
    "targets": [{
          "type": "source",
