@@ -89,3 +89,7 @@ msgstr ""
 #: qx/ui/table/columnmodel/Resize.js:197
 msgid "Reset column widths"
 msgstr ""
+
+#: qx/ui/form/validation/Manager.js:37
+msgid "This field is required"
+msgstr ""

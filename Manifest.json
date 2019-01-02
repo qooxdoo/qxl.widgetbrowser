@@ -1,25 +1,51 @@
 {
-  "info": {
-    "name": "widgetbrowser",
-    "summary": "Widget browser",
-    "description": "This app demonstrates many widgets of qooxdoo.",
-    "homepage": "http://demo.qooxdoo.org/current/widgetbrowser",
-    "license": "MIT",
-    "authors": [
-      {
-        "name": "Tristan Koch (tristankoch)",
-        "email": "tristan DOT koch AT 1und1 DOT de"
+   "info": {
+      "name": "widgetbrowser",
+      "summary": "Widget browser",
+      "description": "This app demonstrates many widgets of qooxdoo.",
+      "homepage": "http://demo.qooxdoo.org/current/widgetbrowser",
+      "license": "MIT",
+      "authors": [{
+            "name": "Tristan Koch (tristankoch)",
+            "email": "tristan DOT koch AT 1und1 DOT de"
+         }
+      ],
+      "version": "0.1.3"
+   },
+   "provides": {
+      "namespace": "qxl.widgetbrowser",
+      "encoding": "utf-8",
+      "class": "source/class",
+      "resource": "source/resource",
+      "translation": "source/translation",
+      "type": "application",
+      "application": {
+         "class": "qxl.widgetbrowser.Application",
+         "theme": "qx.theme.Indigo",
+         "name": "widgetbrowser",
+         "title": "WidgetBrowser",
+         "include": [
+            "qx.theme.Modern",
+            "qx.theme.Simple",
+            "qx.theme.Classic",
+            "qxl.widgetbrowser.pages.Tree",
+            "qxl.widgetbrowser.pages.List",
+            "qxl.widgetbrowser.pages.Table",
+            "qxl.widgetbrowser.pages.Form",
+            "qxl.widgetbrowser.pages.ToolBar",
+            "qxl.widgetbrowser.pages.Window",
+            "qxl.widgetbrowser.pages.Tab",
+            "qxl.widgetbrowser.pages.Control",
+            "qxl.widgetbrowser.pages.Embed",
+            "qxl.widgetbrowser.pages.EmbedFrame",
+            "qxl.widgetbrowser.pages.Basic",
+            "qxl.widgetbrowser.pages.Misc"
+         ]
       }
-    ],
-    "version": "0.1.3",
-    "qooxdoo-range": "^6.0.0-alpha"
-  },
-  "provides": {
-    "namespace": "qxl.widgetbrowser",
-    "encoding": "utf-8",
-    "class": "source/class",
-    "resource": "source/resource",
-    "translation": "source/translation",
-    "type": "application"
-  }
+   },
+   "requires": {
+      "qooxdoo-sdk": "^6.0.0-alpha",
+      "qooxdoo/qxl.formdemo": "^0.1.1",
+      "qooxdoo/qxl.versionlabel": "^0.1.1"
+   }
 }
