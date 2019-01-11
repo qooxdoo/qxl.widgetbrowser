@@ -1,7 +1,6 @@
 {
   "libraries": [
     {
-      "namespace": "qxl.versionlabel",
       "library_name": "versionlabel",
       "library_version": "0.1.1",
       "repo_name": "qooxdoo/qxl.versionlabel",
@@ -9,7 +8,6 @@
       "path": "contrib/qooxdoo_qxl.versionlabel_v0.1.1"
     },
     {
-      "namespace": "qxl.formdemo",
       "library_name": "formdemo",
       "library_version": "0.1.1",
       "repo_name": "qooxdoo/qxl.formdemo",

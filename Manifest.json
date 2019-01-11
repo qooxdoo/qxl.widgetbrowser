@@ -44,12 +44,9 @@
       ]
     }
   },
-  "requires": {
-    "qooxdoo-compiler": "^0.2.40",
-    "libraries": {
-      "qx": "^6.0.0-alpha",
-      "qxl.versionlabel": "0.1.1",
-      "qxl.formdemo": "0.1.1"
-    }
+"requires": {
+    "qooxdoo-sdk": "^6.0.0-alpha",
+    "qooxdoo/qxl.formdemo": "^0.1.1",
+    "qooxdoo/qxl.versionlabel": "^0.1.1"
   }
 }
