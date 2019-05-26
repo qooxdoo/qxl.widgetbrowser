@@ -1,8 +1,13 @@
 {
+   "$schema": "https://raw.githubusercontent.com/qooxdoo/qooxdoo-compiler/master/resource/schema/v1/compile.json",
    "environment": {
-      "qx.icontheme": ["Tango", "Oxygen"]
+      "qx.icontheme": [
+         "Tango",
+         "Oxygen"
+      ]
    },
-   "applications": [{
+   "applications": [
+      {
          "class": "qxl.widgetbrowser.Application",
          "theme": "qx.theme.Indigo",
          "name": "widgetbrowser",
@@ -27,17 +32,17 @@
       }
    ],
    /** Targets */
-   "targets": [{
+   "targets": [
+      {
          "type": "source",
-         "outputPath": "source-output"
-      }, {
+         "outputPath": "compiled/source"
+      },
+      {
          "type": "build",
-         "outputPath": "build-output"
+         "outputPath": "compiled/build"
       }
    ],
-
    "defaultTarget": "source",
-
    "locales": [
       "en"
    ],
