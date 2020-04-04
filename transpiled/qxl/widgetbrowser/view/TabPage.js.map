@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/qxl.widgetbrowser/source/class/qxl/widgetbrowser/view/TabPage.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "tabview",
+    "Page",
+    "include",
+    "qxl",
+    "widgetbrowser",
+    "MControls",
+    "construct",
+    "label",
+    "classname",
+    "controls",
+    "setLabel",
+    "setLayout",
+    "layout",
+    "Canvas",
+    "addListenerOnce",
+    "clazz",
+    "getByName",
+    "pageContent",
+    "add",
+    "top",
+    "edge",
+    "initControls",
+    "getWidgets",
+    "loading",
+    "setVisibility",
+    "basic",
+    "Image",
+    "setMarginTop",
+    "setMarginLeft",
+    "left",
+    "members",
+    "view",
+    "TabPage"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;;AAKA;;;;;;;;;;;;;;;;AAiBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,gCAAhB,EACA;AACEC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,IADxB;AAGEC,IAAAA,OAAO,EAAEC,GAAG,CAACC,aAAJ,CAAkBC,SAH7B;AAKEC,IAAAA,SAAS,EAAE,mBAASC,KAAT,EAAgBC,SAAhB,EAA2BC,QAA3B,EACX;AACE;AAEA,WAAKC,QAAL,CAAcH,KAAd;AACA,WAAKI,SAAL,CAAe,IAAInB,EAAE,CAACO,EAAH,CAAMa,MAAN,CAAaC,MAAjB,EAAf,EAJF,CAME;;AACA,WAAKC,eAAL,CAAqB,QAArB,EAA+B,YAAW;AACtC,YAAIC,KAAK,GAAGvB,EAAE,CAACI,KAAH,CAASoB,SAAT,CAAmBR,SAAnB,CAAZ;AACA,YAAIS,WAAW,GAAG,IAAIF,KAAJ,EAAlB,CAFsC,CAGtC;;AACA,aAAKG,GAAL,CAASD,WAAT,EAAsB;AAACE,UAAAA,GAAG,EAAE,EAAN;AAAUC,UAAAA,IAAI,EAAE;AAAhB,SAAtB,EAJsC,CAKtC;;AACA,aAAKC,YAAL,CAAkBJ,WAAW,CAACK,UAAZ,EAAlB,EAA4Cb,QAA5C,EANsC,CAOtC;;AACAc,QAAAA,OAAO,CAACC,aAAR,CAAsB,UAAtB;AACH,OATD,EASG,IATH,EAPF,CAkBE;;AACA,UAAID,OAAO,GAAG,IAAI/B,EAAE,CAACO,EAAH,CAAM0B,KAAN,CAAYC,KAAhB,CAAsB,iCAAtB,CAAd;AACAH,MAAAA,OAAO,CAACI,YAAR,CAAqB,CAAC,EAAtB;AACAJ,MAAAA,OAAO,CAACK,aAAR,CAAsB,CAAC,EAAvB;AACA,WAAKV,GAAL,CAASK,OAAT,EAAkB;AAACM,QAAAA,IAAI,EAAE,KAAP;AAAcV,QAAAA,GAAG,EAAE;AAAnB,OAAlB;AACD,KA7BH;AA+BEW,IAAAA,OAAO,EACP;AAhCF,GADA;AAxCA3B,EAAAA,GAAG,CAACC,aAAJ,CAAkB2B,IAAlB,CAAuBC,OAAvB,CAA+BrC,aAA/B,GAA+CA,aAA/C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tristan Koch (tristankoch)\n\n************************************************************************ */\n\n/* ************************************************************************\n\n\n************************************************************************ */\n\n/**\n *\n * @asset(qxl/widgetbrowser/loading66.gif)\n * @use(qxl.widgetbrowser.pages.Tree)\n * @use(qxl.widgetbrowser.pages.List)\n * @use(qxl.widgetbrowser.pages.Table)\n * @use(qxl.widgetbrowser.pages.Form)\n * @use(qxl.widgetbrowser.pages.ToolBar)\n * @use(qxl.widgetbrowser.pages.Window)\n * @use(qxl.widgetbrowser.pages.Tab)\n * @use(qxl.widgetbrowser.pages.Control)\n * @use(qxl.widgetbrowser.pages.Embed)\n * @use(qxl.widgetbrowser.pages.EmbedFrame)\n * @use(qxl.widgetbrowser.pages.Basic)\n * @use(qxl.widgetbrowser.pages.Misc)\n */\n\nqx.Class.define(\"qxl.widgetbrowser.view.TabPage\",\n{\n  extend: qx.ui.tabview.Page,\n\n  include: qxl.widgetbrowser.MControls,\n\n  construct: function(label, classname, controls)\n  {\n    this.base(arguments);\n\n    this.setLabel(label);\n    this.setLayout(new qx.ui.layout.Canvas());\n\n    // Load content of tab on \"appear\"\n    this.addListenerOnce(\"appear\", function() {\n        var clazz = qx.Class.getByName(classname);\n        var pageContent = new clazz();\n        // Add to page\n        this.add(pageContent, {top: 40, edge: 0});\n        // Init controls for widgets of page\n        this.initControls(pageContent.getWidgets(), controls);\n        // Exclude loading indicator\n        loading.setVisibility(\"excluded\");\n    }, this);\n\n    // Show centered loading indicator\n    var loading = new qx.ui.basic.Image(\"qxl/widgetbrowser/loading66.gif\");\n    loading.setMarginTop(-33);\n    loading.setMarginLeft(-33);\n    this.add(loading, {left: \"50%\", top: \"50%\"});\n  },\n\n  members :\n  {\n  }\n});\n"
+  ]
+}

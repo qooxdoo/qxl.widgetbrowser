@@ -1,0 +1,33 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/qxl.widgetbrowser/source/class/qxl/widgetbrowser/pages/Form.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "qxl",
+    "widgetbrowser",
+    "pages",
+    "AbstractPage",
+    "statics",
+    "ITEM_SIZE",
+    "construct",
+    "formItems",
+    "formdemo",
+    "FormItems",
+    "_widgets",
+    "getWidgets",
+    "add",
+    "Form"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;;;;;;;AAUAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,8BAAhB,EACA;AACEC,IAAAA,MAAM,EAAEC,GAAG,CAACC,aAAJ,CAAkBC,KAAlB,CAAwBC,YADlC;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,SAAS,EAAE;AADb,KAJF;AAQEC,IAAAA,SAAS,EAAG,qBACZ;AACE;AAEA,UAAIC,SAAS,GAAG,IAAIP,GAAG,CAACQ,QAAJ,CAAaC,SAAjB,EAAhB;AACA,WAAKC,QAAL,GAAgBH,SAAS,CAACI,UAAV,EAAhB;AACA,WAAKC,GAAL,CAASL,SAAT;AACD;AAfH,GADA;AA5BAP,EAAAA,GAAG,CAACC,aAAJ,CAAkBC,KAAlB,CAAwBW,IAAxB,CAA6BjB,aAA7B,GAA6CA,aAA7C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tristan Koch (tristankoch)\n\n************************************************************************ */\n\n/**\n * Demonstrates qx.ui.form(...):\n *\n * AbstractField, AbstractSelectBox, Button, CheckBox, ComboBox, DateField,\n * HoverButton, List, ListItem, MenuButton, PasswordField, RadioButton,\n * RadioButtonGroup, RepeatButton, SelectBox, Slider, Spinner, SplitButton,\n * TextArea, TextField, ToggleButton\n *\n * @ignore(qxc)\n */\nqx.Class.define(\"qxl.widgetbrowser.pages.Form\",\n{\n  extend: qxl.widgetbrowser.pages.AbstractPage,\n\n  statics:\n  {\n    ITEM_SIZE: 3\n  },\n\n  construct : function()\n  {\n    this.base(arguments);\n\n    var formItems = new qxl.formdemo.FormItems();\n    this._widgets = formItems.getWidgets();\n    this.add(formItems);\n  }\n});\n"
+  ]
+}

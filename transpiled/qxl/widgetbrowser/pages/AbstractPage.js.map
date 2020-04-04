@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/qxl.widgetbrowser/source/class/qxl/widgetbrowser/pages/AbstractPage.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "type",
+    "extend",
+    "ui",
+    "container",
+    "Composite",
+    "construct",
+    "setLayout",
+    "layout",
+    "Canvas",
+    "_widgets",
+    "Array",
+    "members",
+    "getWidgets",
+    "qxl",
+    "widgetbrowser",
+    "pages",
+    "AbstractPage"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,sCAAhB,EACA;AACEC,IAAAA,IAAI,EAAE,UADR;AAGEC,IAAAA,MAAM,EAAEP,EAAE,CAACQ,EAAH,CAAMC,SAAN,CAAgBC,SAH1B;AAKEC,IAAAA,SAAS,EAAG,qBACZ;AACE;AACA,WAAKC,SAAL,CAAe,IAAIZ,EAAE,CAACQ,EAAH,CAAMK,MAAN,CAAaC,MAAjB,EAAf;AAEA,WAAKC,QAAL,GAAgB,IAAIf,EAAE,CAACM,IAAH,CAAQU,KAAZ,EAAhB;AACD,KAXH;AAaEC,IAAAA,OAAO,EACP;AACEF,MAAAA,QAAQ,EAAE,IADZ;AAGEG,MAAAA,UAAU,EAAE,sBACZ;AACE,eAAO,KAAKH,QAAZ;AACD;AANH;AAdF,GADA;AAlBAI,EAAAA,GAAG,CAACC,aAAJ,CAAkBC,KAAlB,CAAwBC,YAAxB,CAAqCnB,aAArC,GAAqDA,aAArD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tristan Koch (tristankoch)\n\n************************************************************************ */\n\nqx.Class.define(\"qxl.widgetbrowser.pages.AbstractPage\",\n{\n  type: \"abstract\",\n\n  extend: qx.ui.container.Composite,\n\n  construct : function()\n  {\n    this.base(arguments);\n    this.setLayout(new qx.ui.layout.Canvas());\n\n    this._widgets = new qx.type.Array();\n  },\n\n  members :\n  {\n    _widgets: null,\n\n    getWidgets: function()\n    {\n      return this._widgets;\n    }\n  }\n});\n"
+  ]
+}
