@@ -51,13 +51,17 @@ qx.Class.define("qxl.widgetbrowser.view.Header",
     var select = new qx.ui.form.SelectBox("Theme");
     var themes = qx.Theme.getAll();
     var currentThemeItem;
+    var currentTheme = qx.theme.manager.Meta.getInstance().getTheme();
     for (var key in themes) {
       let theme = themes[key];
       if (theme.type === "meta") {
         var item = new qx.ui.form.ListItem(theme.name);
         item.setUserData("value", theme.name);
         select.add(item);
-        if (! currentThemeItem  && hashTheme && theme.name.match(hashTheme)){
+        if (theme === currentTheme) {
+          select.setSelection([item]);
+        }
+        if (! currentThemeItem && hashTheme && theme.name.match(hashTheme)){
           currentThemeItem = item;
         }
       }
@@ -76,11 +80,6 @@ qx.Class.define("qxl.widgetbrowser.view.Header",
     // Set current theme
     if (currentThemeItem){
       select.setSelection([currentThemeItem]);
-      qx.theme.manager.Meta.getInstance().setTheme(
-          qx.Theme.getByName(
-              currentThemeItem.getUserData("value")
-          )
-      );
     }
 
     // Finally assemble header

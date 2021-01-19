@@ -18,6 +18,7 @@
 
 /*
  * Main Application.
+ * @asset(qx/icon/*)
  */
 qx.Class.define("qxl.widgetbrowser.Application",
 {
