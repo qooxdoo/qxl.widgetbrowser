@@ -16,6 +16,8 @@
             "qx.theme.Modern",
             "qx.theme.Simple",
             "qx.theme.Classic",
+            "qx.theme.TangibleLight",
+            "qx.theme.TangibleDark",
             "qxl.widgetbrowser.pages.Tree",
             "qxl.widgetbrowser.pages.List",
             "qxl.widgetbrowser.pages.Table",
