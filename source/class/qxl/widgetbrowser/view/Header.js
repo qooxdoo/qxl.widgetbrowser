@@ -55,7 +55,7 @@ qx.Class.define("qxl.widgetbrowser.view.Header",
     for (var key in themes) {
       let theme = themes[key];
       if (theme.type === "meta") {
-        var item = new qx.ui.form.ListItem(theme.name);
+        var item = new qx.ui.form.ListItem(theme.title);
         item.setUserData("value", theme.name);
         select.add(item);
         if (theme === currentTheme) {

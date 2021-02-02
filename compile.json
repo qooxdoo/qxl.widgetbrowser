@@ -1,4 +1,4 @@
-{
+qx.theme.Indigo{
    "$schema": "https://qooxdoo.org/schema/compile-1-0-0.json",
    "environment": {
       "qx.icontheme": [
@@ -13,6 +13,7 @@
          "name": "widgetbrowser",
          "title": "WidgetBrowser",
          "include": [
+            "qx.theme.Indigo",
             "qx.theme.Modern",
             "qx.theme.Simple",
             "qx.theme.Classic",
