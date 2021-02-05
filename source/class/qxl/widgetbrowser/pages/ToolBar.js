@@ -52,8 +52,7 @@ qx.Class.define("qxl.widgetbrowser.pages.ToolBar",
 {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function()
-  {
+  construct: function() {
     this.base(arguments);
 
     this.initWidgets();
@@ -62,8 +61,7 @@ qx.Class.define("qxl.widgetbrowser.pages.ToolBar",
   members :
   {
 
-    initWidgets: function()
-    {
+    initWidgets: function() {
       var label;
 
       // Toolbar
@@ -88,25 +86,23 @@ qx.Class.define("qxl.widgetbrowser.pages.ToolBar",
       label = new qx.ui.basic.Label("Context Menu (Right click the widget)");
       this.add(label, {left: 0, top: 370});
       this.add(this.getContextMenuWidget(), {left: 0, top: 390});
-
     },
 
-    getToolBar : function()
-    {
-      var frame = new qx.ui.container.Composite(new qx.ui.layout.Grow);
+    getToolBar : function() {
+      var frame = new qx.ui.container.Composite(new qx.ui.layout.Grow());
       frame.setDecorator("main");
 
       //
       // ToolBar
       //
 
-      var toolbar = new qx.ui.toolbar.ToolBar;
+      var toolbar = new qx.ui.toolbar.ToolBar();
       toolbar.setWidth(200);
       frame.add(toolbar);
 
       // Part
-      var firstPart = new qx.ui.toolbar.Part;
-      var secondPart = new qx.ui.toolbar.Part;
+      var firstPart = new qx.ui.toolbar.Part();
+      var secondPart = new qx.ui.toolbar.Part();
 
       toolbar.add(firstPart);
       toolbar.addSpacer();
@@ -156,9 +152,8 @@ qx.Class.define("qxl.widgetbrowser.pages.ToolBar",
       return frame;
     },
 
-    getSplitButtonMenu : function()
-    {
-      var menu = new qx.ui.menu.Menu;
+    getSplitButtonMenu : function() {
+      var menu = new qx.ui.menu.Menu();
 
       //
       // Menu
@@ -173,9 +168,8 @@ qx.Class.define("qxl.widgetbrowser.pages.ToolBar",
       return menu;
     },
 
-    getButtonMenu : function()
-    {
-      var menu = new qx.ui.menu.Menu;
+    getButtonMenu : function() {
+      var menu = new qx.ui.menu.Menu();
 
       //
       // Menu
@@ -212,11 +206,10 @@ qx.Class.define("qxl.widgetbrowser.pages.ToolBar",
       return menu;
     },
 
-    getMenuBar : function()
-    {
-      var frame = new qx.ui.container.Composite(new qx.ui.layout.Grow);
+    getMenuBar : function() {
+      var frame = new qx.ui.container.Composite(new qx.ui.layout.Grow());
 
-      var menubar = new qx.ui.menubar.MenuBar;
+      var menubar = new qx.ui.menubar.MenuBar();
       frame.add(menubar);
 
       var button;
@@ -231,12 +224,11 @@ qx.Class.define("qxl.widgetbrowser.pages.ToolBar",
     },
 
 
-    getToolBarExclude : function()
-    {
-      var frame = new qx.ui.container.Composite(new qx.ui.layout.Grow);
+    getToolBarExclude : function() {
+      var frame = new qx.ui.container.Composite(new qx.ui.layout.Grow());
       frame.setDecorator("main");
 
-      var toolbar = new qx.ui.toolbar.ToolBar;
+      var toolbar = new qx.ui.toolbar.ToolBar();
       frame.add(toolbar);
 
       var classes = [
@@ -245,24 +237,24 @@ qx.Class.define("qxl.widgetbrowser.pages.ToolBar",
         qx.ui.toolbar.RadioButton,
         qx.ui.toolbar.MenuButton
       ];
-      for (var j=0; j < classes.length; j++) {
+      for (let j=0; j < classes.length; j++) {
         var part = new qx.ui.toolbar.Part();
-        for (var i=0; i < 5; i++) {
+        for (let i=0; i < 5; i++) {
           var button = new classes[j](i + "");
           this._widgets.push(button);
           button.canHide = i % 2 == 0;
           part.add(button);
-        };
+        }
         toolbar.add(part);
-      };
+      }
 
       var radioGroup = new qx.ui.form.RadioGroup();
       radioGroup.setAllowEmptySelection(true);
 
       var radioButtons = toolbar.getChildren()[2].getChildren();
-      for (var i=0; i < radioButtons.length; i++) {
+      for (let i=0; i < radioButtons.length; i++) {
         radioGroup.add(radioButtons[i]);
-      };
+      }
 
       return frame;
     },
@@ -307,6 +299,7 @@ qx.Class.define("qxl.widgetbrowser.pages.ToolBar",
 
       var helpButton = new qx.ui.menu.Button("Help");
       helpButton.addListener("execute", function() {
+        /* eslint-disable-next-line no-alert */
         alert("Help!");
       });
       menu.add(helpButton);

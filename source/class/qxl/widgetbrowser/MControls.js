@@ -22,11 +22,10 @@ qx.Mixin.define("qxl.widgetbrowser.MControls",
   members:
   {
 
-    initControls: function(widgets, options)
-    {
+    initControls: function(widgets, options) {
       options = options || {};
 
-      var controls = new qx.ui.container.Composite;
+      var controls = new qx.ui.container.Composite();
       controls.setLayout(new qx.ui.layout.HBox(10));
       this.add(controls);
 
@@ -96,7 +95,7 @@ qx.Mixin.define("qxl.widgetbrowser.MControls",
       }
 
       if (options.invalid) {
-        var toggleInvalid = new qx.ui.form.ToggleButton("Invalid");
+        let toggleInvalid = new qx.ui.form.ToggleButton("Invalid");
         toggleInvalid.addListener("changeValue", function(e) {
           widgets.forEach(function(widget, index) {
             if (widget.setInvalidMessage && widget.setValid) {
@@ -109,7 +108,7 @@ qx.Mixin.define("qxl.widgetbrowser.MControls",
       }
 
       if (options.overflow) {
-        var toggleInvalid = new qx.ui.form.ToggleButton("Overflow");
+        let toggleInvalid = new qx.ui.form.ToggleButton("Overflow");
         toggleInvalid.addListener("changeValue", function(e) {
           widgets.forEach(function(widget, index) {
             widget.toggleOverflow(widget, e.getData());
@@ -129,7 +128,6 @@ qx.Mixin.define("qxl.widgetbrowser.MControls",
         });
         controls.add(tb);
       }
-
     }
   }
 });

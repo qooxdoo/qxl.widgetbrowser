@@ -31,8 +31,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Tab",
 {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function()
-  {
+  construct: function() {
     this.base(arguments);
 
     this.__grid = new qx.ui.container.Composite(new qx.ui.layout.Grid(10, 20));
@@ -76,7 +75,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Tab",
         var children = tabView.getChildren();
         for (var i=children.length -1; i >=0; i--) {
           tabView.remove(children[i]);
-        };
+        }
       } else {
         this.addTabPages(tabView);
       }

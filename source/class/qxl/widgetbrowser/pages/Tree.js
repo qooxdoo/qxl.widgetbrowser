@@ -38,8 +38,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Tree",
 {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function()
-  {
+  construct: function() {
     this.base(arguments);
 
     this.__grid = new qx.ui.container.Composite(new qx.ui.layout.Grid(10));
@@ -53,8 +52,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Tree",
 
     __grid : null,
 
-    initWidgets: function()
-    {
+    initWidgets: function() {
       var label;
       var widgets = this._widgets;
 
@@ -84,8 +82,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Tree",
       widgets.push(treeVirtual);
     },
 
-    __getTree : function()
-    {
+    __getTree : function() {
       var tree = new qx.ui.tree.Tree().set({
         width : 200,
         height : 400

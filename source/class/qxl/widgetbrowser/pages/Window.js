@@ -41,8 +41,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Window",
 {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function()
-  {
+  construct: function() {
     this.base(arguments);
 
     var decorator = new qx.ui.decoration.Decorator().set({
@@ -62,9 +61,10 @@ qx.Class.define("qxl.widgetbrowser.pages.Window",
 
     __desktop: null,
 
-    initWidgets: function()
-    {
-      var w1, w2, w3;
+    initWidgets: function() {
+      var w1; 
+      var w2; 
+      var w3;
       var widgets = this._widgets;
 
       w1 = this.__createWindow1();
@@ -83,8 +83,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Window",
       this.__desktop.add(w3, {left: 80, top: 230});
     },
 
-    __createWindow1 : function()
-    {
+    __createWindow1 : function() {
       // Create the Window
       var win = new qx.ui.window.Window("First Window", "icon/16/apps/office-calendar.png");
       win.setLayout(new qx.ui.layout.VBox(10));
@@ -107,7 +106,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Window",
       win.add(atom);
 
       // Add a TabView
-      var tabView = new qx.ui.tabview.TabView;
+      var tabView = new qx.ui.tabview.TabView();
       win.add(tabView, {flex:1});
 
       var page1 = new qx.ui.tabview.Page("Page 1");
@@ -123,8 +122,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Window",
     },
 
 
-    __createWindow2 : function()
-    {
+    __createWindow2 : function() {
       var win = new qx.ui.window.Window("Second Window", "icon/16/apps/internet-feed-reader.png");
       win.setLayout(new qx.ui.layout.VBox(10));
       win.setStatus("Application is ready");
@@ -133,7 +131,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Window",
       win.add(atom);
 
 
-      var box = new qx.ui.container.Composite;
+      var box = new qx.ui.container.Composite();
       box.setLayout(new qx.ui.layout.HBox(10));
       win.add(box, {flex:1});
 
@@ -212,8 +210,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Window",
       resize.add(resizeFrame);
 
       var edges = ["top", "right", "bottom", "left"];
-      for (var i=0; i<edges.length; i++)
-      {
+      for (var i=0; i<edges.length; i++) {
         var edge = edges[i];
         var resizable = new qx.ui.form.CheckBox("Resizable " + edge).set({
           value: true
@@ -243,10 +240,9 @@ qx.Class.define("qxl.widgetbrowser.pages.Window",
     },
 
 
-    __createWindow3 : function()
-    {
+    __createWindow3 : function() {
       var win = new qx.ui.window.Window("Third Window", "icon/16/apps/internet-telephony.png");
-      win.setLayout(new qx.ui.layout.VBox);
+      win.setLayout(new qx.ui.layout.VBox());
       win.setMinWidth(200);
       win.setMaxWidth(450);
       win.setMaxHeight(400);
@@ -263,8 +259,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Window",
     },
 
 
-    __getModalWindow1 : function()
-    {
+    __getModalWindow1 : function() {
       var wm1 = new qx.ui.window.Window("First Modal Dialog");
       wm1.setLayout(new qx.ui.layout.VBox(10));
       wm1.setModal(true);
@@ -296,8 +291,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Window",
      * @lint ignoreDeprecated(alert)
      * @return {qx.ui.window.Window} Modal dialog window
      */
-    __getModalWindow2 : function()
-    {
+    __getModalWindow2 : function() {
       var wm2 = new qx.ui.window.Window("Second Modal Dialog");
       wm2.setLayout(new qx.ui.layout.VBox(10));
       wm2.setModal(true);
@@ -308,7 +302,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Window",
       var warn1 = new qx.ui.basic.Atom("Do you want to fly to Berlin?", "icon/32/status/dialog-error.png");
       wm2.add(warn1);
 
-      var box = new qx.ui.container.Composite;
+      var box = new qx.ui.container.Composite();
       box.setLayout(new qx.ui.layout.HBox(10, "right"));
       wm2.add(box);
 
@@ -320,6 +314,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Window",
 
       var btn4 = new qx.ui.form.Button("No", "icon/16/actions/dialog-cancel.png");
       btn4.addListener("execute", function(e) {
+        /* eslint-disable-next-line no-alert */
         alert("Sorry, please tap 'Yes'!");
       });
       box.add(btn4);

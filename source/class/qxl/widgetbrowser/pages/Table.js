@@ -42,8 +42,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Table",
 {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function()
-  {
+  construct: function() {
     this.base(arguments);
 
     this.initWidgets();
@@ -54,18 +53,16 @@ qx.Class.define("qxl.widgetbrowser.pages.Table",
 
     __nextId: 0,
 
-    initWidgets: function()
-    {
+    initWidgets: function() {
       var widgets = this._widgets = new qx.type.Array();
 
       var table = this.__createTable();
-      table.setFocusedCell(2,5);
+      table.setFocusedCell(2, 5);
       widgets.push(table);
       this.add(table);
     },
 
-    __createTable : function()
-    {
+    __createTable : function() {
       var rowData = this.__createRandomRows(500);
 
       var tableModel = new qx.ui.table.model.Simple();
@@ -93,8 +90,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Table",
       return table;
     },
 
-    __createRandomRows : function(rowCount)
-    {
+    __createRandomRows : function(rowCount) {
       var rowData = [];
       var now = new Date().getTime();
       var dateRange = 400 * 24 * 60 * 60 * 1000; // 400 days

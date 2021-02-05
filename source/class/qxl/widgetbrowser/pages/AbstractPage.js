@@ -22,8 +22,7 @@ qx.Class.define("qxl.widgetbrowser.pages.AbstractPage",
 
   extend: qx.ui.container.Composite,
 
-  construct : function()
-  {
+  construct : function() {
     this.base(arguments);
     this.setLayout(new qx.ui.layout.Canvas());
 
@@ -34,8 +33,7 @@ qx.Class.define("qxl.widgetbrowser.pages.AbstractPage",
   {
     _widgets: null,
 
-    getWidgets: function()
-    {
+    getWidgets: function() {
       return this._widgets;
     }
   }

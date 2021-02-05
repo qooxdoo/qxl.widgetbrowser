@@ -29,8 +29,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Control",
 {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function()
-  {
+  construct: function() {
     this.base(arguments);
 
     this.__vbox = new qx.ui.container.Composite(new qx.ui.layout.VBox(20));
@@ -63,8 +62,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Control",
       widgets.push(openColorPopup);
       this.__vbox.add(label);
       this.__vbox.add(openColorPopup);
-      openColorPopup.addListener("execute", function()
-      {
+      openColorPopup.addListener("execute", function() {
         colorPopup.placeToWidget(openColorPopup, true);
         colorPopup.show();
       });
@@ -75,7 +73,6 @@ qx.Class.define("qxl.widgetbrowser.pages.Control",
       widgets.push(dateChooser);
       this.__vbox.add(label);
       this.__vbox.add(dateChooser);
-
     }
   }
 });

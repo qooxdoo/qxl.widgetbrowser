@@ -33,8 +33,7 @@ qx.Class.define("qxl.widgetbrowser.view.Header",
   /**
    * @ignore(qxc)
    */
-  construct : function()
-  {
+  construct : function() {
     this.base(arguments);
 
     this.setLayout(new qx.ui.layout.HBox());
@@ -61,7 +60,7 @@ qx.Class.define("qxl.widgetbrowser.view.Header",
         if (theme === currentTheme) {
           select.setSelection([item]);
         }
-        if (! currentThemeItem && hashTheme && theme.name.match(hashTheme)){
+        if (!currentThemeItem && hashTheme && theme.name.match(hashTheme)) {
           currentThemeItem = item;
         }
       }
@@ -78,16 +77,15 @@ qx.Class.define("qxl.widgetbrowser.view.Header",
     });
 
     // Set current theme
-    if (currentThemeItem){
+    if (currentThemeItem) {
       select.setSelection([currentThemeItem]);
     }
 
     // Finally assemble header
     this.add(title);
-    this.add(new qx.ui.core.Spacer, {flex : 1});
+    this.add(new qx.ui.core.Spacer(), {flex : 1});
     this.add(select);
-    this.add(new qx.ui.core.Spacer, {width: "2%"});
+    this.add(new qx.ui.core.Spacer(), {width: "2%"});
     this.add(version);
-
   }
 });

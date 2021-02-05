@@ -34,8 +34,7 @@ qx.Class.define("qxl.widgetbrowser.pages.List",
 {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function()
-  {
+  construct: function() {
     this.base(arguments);
 
     this.__grid = new qx.ui.container.Composite(new qx.ui.layout.Grid(10));
@@ -51,8 +50,7 @@ qx.Class.define("qxl.widgetbrowser.pages.List",
     __grid : null,
     __listUrl : null,
 
-    initWidgets: function()
-    {
+    initWidgets: function() {
       var widgets = this._widgets;
 
       var label = new qx.ui.basic.Label("List");
@@ -117,8 +115,7 @@ qx.Class.define("qxl.widgetbrowser.pages.List",
       var delegate = {
 
         // Sorts the model data by last name
-        sorter : function(a, b)
-        {
+        sorter : function(a, b) {
           a = a.getLastname();
           b = b.getLastname();
 

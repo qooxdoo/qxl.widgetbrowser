@@ -44,8 +44,7 @@ qx.Class.define("qxl.widgetbrowser.view.TabPage",
 
   include: qxl.widgetbrowser.MControls,
 
-  construct: function(label, classname, controls)
-  {
+  construct: function(label, classname, controls) {
     this.base(arguments);
 
     this.setLabel(label);
@@ -54,6 +53,7 @@ qx.Class.define("qxl.widgetbrowser.view.TabPage",
     // Load content of tab on "appear"
     this.addListenerOnce("appear", function() {
         var clazz = qx.Class.getByName(classname);
+        /* eslint-disable-next-line new-cap */
         var pageContent = new clazz();
         // Add to page
         this.add(pageContent, {top: 40, edge: 0});

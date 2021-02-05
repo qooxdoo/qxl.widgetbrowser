@@ -35,8 +35,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Form",
     ITEM_SIZE: 3
   },
 
-  construct : function()
-  {
+  construct : function() {
     this.base(arguments);
 
     var formItems = new qxl.formdemo.FormItems();

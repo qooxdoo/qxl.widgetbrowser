@@ -34,8 +34,7 @@ qx.Class.define("qxl.widgetbrowser.pages.EmbedFrame",
 {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function()
-  {
+  construct: function() {
     this.base(arguments);
 
     this.setLayout(new qx.ui.layout.Canvas(10));
@@ -45,10 +44,11 @@ qx.Class.define("qxl.widgetbrowser.pages.EmbedFrame",
   members :
   {
 
-    initWidgets: function()
-    {
+    initWidgets: function() {
       var widgets = this._widgets;
-      var label, left, right;
+      var label; 
+      var left; 
+      var right;
       var url = qx.util.ResourceManager.getInstance().toUri("qxl/widgetbrowser/blank.html");
 
       var splitPane = new qx.ui.splitpane.Pane("horizontal");
@@ -83,7 +83,6 @@ qx.Class.define("qxl.widgetbrowser.pages.EmbedFrame",
 
       splitPane.add(left);
       splitPane.add(right);
-
     }
   }
 });

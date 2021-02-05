@@ -34,8 +34,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Basic",
 {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function()
-  {
+  construct: function() {
     this.base(arguments);
 
     var hbox = this.__hbox = new qx.ui.container.Composite(new qx.ui.layout.HBox(10));
@@ -49,8 +48,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Basic",
 
     __hbox: null,
 
-    initWidgets: function()
-    {
+    initWidgets: function() {
       var widgets = this._widgets;
 
       // Label
