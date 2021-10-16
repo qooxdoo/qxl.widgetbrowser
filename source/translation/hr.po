@@ -1,0 +1,109 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-30 09:54+0100\n"
+"PO-Revision-Date: 2021-10-16 19:22+0100\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: \n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: qx/ui/table/Table.js:1987
+msgid "one row"
+msgid_plural "%1 rows"
+msgstr[0] "%1 redak"
+msgstr[1] "%1 retka"
+msgstr[2] "%1 redaka"
+
+#: qx/ui/table/Table.js:1989
+msgid "one of one row"
+msgid_plural "%1 of %2 rows"
+msgstr[0] "%1 od %2 retka"
+msgstr[1] "%1 od %2 retka"
+msgstr[2] "%1 od %2 redaka"
+
+#: qx/ui/control/ColorSelector.js:255
+msgid "Visual"
+msgstr "Vizualno"
+
+#: qx/ui/control/ColorSelector.js:315
+msgid "Presets"
+msgstr "Unaprijed postavljeno"
+
+#: qx/ui/control/ColorSelector.js:346
+msgid "Details"
+msgstr "Detalji"
+
+#: qx/ui/control/ColorSelector.js:357 qx/ui/control/ColorPopup.js:162
+msgid "Preview (Old/New)"
+msgstr "Pregled (stari/novi)"
+
+#: qx/ui/control/ColorSelector.js:375
+msgid "Hex"
+msgstr "Heksadecimalno"
+
+#: qx/ui/control/ColorSelector.js:398
+msgid "RGB"
+msgstr "RGB"
+
+#: qx/ui/control/ColorSelector.js:430
+msgid "HSB"
+msgstr "HSB"
+
+#: qx/ui/control/ColorPopup.js:147
+msgid "Automatic"
+msgstr "Automatski"
+
+#: qx/ui/control/ColorPopup.js:155
+msgid "Open ColorSelector"
+msgstr "Otvori birač boja"
+
+#: qx/ui/control/ColorPopup.js:180
+msgid "OK"
+msgstr "U redu"
+
+#: qx/ui/control/ColorPopup.js:185
+msgid "Cancel"
+msgstr "Odustani"
+
+#: qx/ui/control/ColorPopup.js:242
+msgid "Color Selector"
+msgstr "Birač boja"
+
+#: qx/ui/control/ColorPopup.js:481
+msgid "Basic Colors"
+msgstr "Osnovne boje"
+
+#: qx/ui/control/ColorPopup.js:487
+msgid "Recent Colors"
+msgstr "Nedavne boje"
+
+#: qx/ui/control/DateChooser.js:258
+msgid "Last year"
+msgstr "Prošla godina"
+
+#: qx/ui/control/DateChooser.js:270
+msgid "Last month"
+msgstr "Prošli mjesec"
+
+#: qx/ui/control/DateChooser.js:282
+msgid "Next month"
+msgstr "Sljedeći mjesec"
+
+#: qx/ui/control/DateChooser.js:294
+msgid "Next year"
+msgstr "Sljedeća godina"
+
+#: qx/ui/table/columnmodel/Resize.js:197
+msgid "Reset column widths"
+msgstr "Obnovi širine stupaca"
+
+#: qx/ui/form/validation/Manager.js:37
+msgid "This field is required"
+msgstr "Ovo je obavezno polje"
