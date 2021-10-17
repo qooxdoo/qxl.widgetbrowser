@@ -1,0 +1,107 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-30 09:54+0100\n"
+"PO-Revision-Date: 2021-10-16 19:25+0100\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: qx/ui/table/Table.js:1987
+msgid "one row"
+msgid_plural "%1 rows"
+msgstr[0] "%1 Zeile"
+msgstr[1] "%1 Zeilen"
+
+#: qx/ui/table/Table.js:1989
+msgid "one of one row"
+msgid_plural "%1 of %2 rows"
+msgstr[0] "Eine von einer Zeile"
+msgstr[1] "%1 von %2 Zeilen"
+
+#: qx/ui/control/ColorSelector.js:255
+msgid "Visual"
+msgstr "Visuell"
+
+#: qx/ui/control/ColorSelector.js:315
+msgid "Presets"
+msgstr "Voreinstellungen"
+
+#: qx/ui/control/ColorSelector.js:346
+msgid "Details"
+msgstr "Details"
+
+#: qx/ui/control/ColorSelector.js:357 qx/ui/control/ColorPopup.js:162
+msgid "Preview (Old/New)"
+msgstr "Vorschau (alt/neu)"
+
+#: qx/ui/control/ColorSelector.js:375
+msgid "Hex"
+msgstr "Hexadezimal"
+
+#: qx/ui/control/ColorSelector.js:398
+msgid "RGB"
+msgstr "RGB"
+
+#: qx/ui/control/ColorSelector.js:430
+msgid "HSB"
+msgstr "HSB"
+
+#: qx/ui/control/ColorPopup.js:147
+msgid "Automatic"
+msgstr "Automatisch"
+
+#: qx/ui/control/ColorPopup.js:155
+msgid "Open ColorSelector"
+msgstr "Farbwähler öffnen"
+
+#: qx/ui/control/ColorPopup.js:180
+msgid "OK"
+msgstr "OK"
+
+#: qx/ui/control/ColorPopup.js:185
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: qx/ui/control/ColorPopup.js:242
+msgid "Color Selector"
+msgstr "Farbwähler"
+
+#: qx/ui/control/ColorPopup.js:481
+msgid "Basic Colors"
+msgstr "Grundfarben"
+
+#: qx/ui/control/ColorPopup.js:487
+msgid "Recent Colors"
+msgstr "Aktuelle Farben"
+
+#: qx/ui/control/DateChooser.js:258
+msgid "Last year"
+msgstr "Leztes Jahr"
+
+#: qx/ui/control/DateChooser.js:270
+msgid "Last month"
+msgstr "Letzter Monat"
+
+#: qx/ui/control/DateChooser.js:282
+msgid "Next month"
+msgstr "Nächster Monat"
+
+#: qx/ui/control/DateChooser.js:294
+msgid "Next year"
+msgstr "Nächstes Jahr"
+
+#: qx/ui/table/columnmodel/Resize.js:197
+msgid "Reset column widths"
+msgstr "Spaltenbreiten zurücksetzen"
+
+#: qx/ui/form/validation/Manager.js:37
+msgid "This field is required"
+msgstr "Dieses Feld ist erforderlich"
