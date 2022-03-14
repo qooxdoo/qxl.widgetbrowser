@@ -38,39 +38,40 @@
  * @use(qxl.widgetbrowser.pages.Misc)
  */
 
-qx.Class.define("qxl.widgetbrowser.view.TabPage",
-{
+qx.Class.define("qxl.widgetbrowser.view.TabPage", {
   extend: qx.ui.tabview.Page,
 
   include: qxl.widgetbrowser.MControls,
 
-  construct: function(label, classname, controls) {
-    this.base(arguments);
+  construct(label, classname, controls) {
+    super();
 
     this.setLabel(label);
     this.setLayout(new qx.ui.layout.Canvas());
 
     // Load content of tab on "appear"
-    this.addListenerOnce("appear", function() {
+    this.addListenerOnce(
+      "appear",
+      function () {
         var clazz = qx.Class.getByName(classname);
         /* eslint-disable-next-line new-cap */
         var pageContent = new clazz();
         // Add to page
-        this.add(pageContent, {top: 40, edge: 0});
+        this.add(pageContent, { top: 40, edge: 0 });
         // Init controls for widgets of page
         this.initControls(pageContent.getWidgets(), controls);
         // Exclude loading indicator
         loading.setVisibility("excluded");
-    }, this);
+      },
+      this
+    );
 
     // Show centered loading indicator
     var loading = new qx.ui.basic.Image("qxl/widgetbrowser/loading66.gif");
     loading.setMarginTop(-33);
     loading.setMarginLeft(-33);
-    this.add(loading, {left: "50%", top: "50%"});
+    this.add(loading, { left: "50%", top: "50%" });
   },
 
-  members :
-  {
-  }
+  members: {},
 });

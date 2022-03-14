@@ -16,13 +16,9 @@
 
 ************************************************************************ */
 
-qx.Mixin.define("qxl.widgetbrowser.MControls",
-{
-
-  members:
-  {
-
-    initControls: function(widgets, options) {
+qx.Mixin.define("qxl.widgetbrowser.MControls", {
+  members: {
+    initControls(widgets, options) {
       options = options || {};
 
       var controls = new qx.ui.container.Composite();
@@ -31,8 +27,8 @@ qx.Mixin.define("qxl.widgetbrowser.MControls",
 
       if (options.disabled) {
         var toggleDisabled = new qx.ui.form.ToggleButton("Disabled");
-        toggleDisabled.addListener("changeValue", function() {
-          widgets.forEach(function(widget, index) {
+        toggleDisabled.addListener("changeValue", function () {
+          widgets.forEach(function (widget, index) {
             if (widget.setEnabled) {
               widget.setEnabled(!this.getValue());
             }
@@ -43,8 +39,8 @@ qx.Mixin.define("qxl.widgetbrowser.MControls",
 
       if (options.hovered) {
         var toggleHovered = new qx.ui.form.ToggleButton("Hovered");
-        toggleHovered.addListener("changeValue", function() {
-          widgets.forEach(function(widget, index) {
+        toggleHovered.addListener("changeValue", function () {
+          widgets.forEach(function (widget, index) {
             if (this.getValue()) {
               widget.addState("hovered");
             } else {
@@ -57,8 +53,8 @@ qx.Mixin.define("qxl.widgetbrowser.MControls",
 
       if (options.selected) {
         var toggleSelected = new qx.ui.form.ToggleButton("Selected");
-        toggleSelected.addListener("changeValue", function() {
-          widgets.forEach(function(widget, index) {
+        toggleSelected.addListener("changeValue", function () {
+          widgets.forEach(function (widget, index) {
             if (this.getValue()) {
               widget.addState("selected");
             } else {
@@ -79,8 +75,8 @@ qx.Mixin.define("qxl.widgetbrowser.MControls",
         };
 
         var toggleFocused = new qx.ui.form.ToggleButton("Focused");
-        toggleFocused.addListener("changeValue", function(e) {
-          widgets.forEach(function(widget, index) {
+        toggleFocused.addListener("changeValue", function (e) {
+          widgets.forEach(function (widget, index) {
             if (widget instanceof qx.ui.form.RadioButtonGroup) {
               var children = widget.getChildren();
               children.forEach(function (child) {
@@ -96,10 +92,12 @@ qx.Mixin.define("qxl.widgetbrowser.MControls",
 
       if (options.invalid) {
         let toggleInvalid = new qx.ui.form.ToggleButton("Invalid");
-        toggleInvalid.addListener("changeValue", function(e) {
-          widgets.forEach(function(widget, index) {
+        toggleInvalid.addListener("changeValue", function (e) {
+          widgets.forEach(function (widget, index) {
             if (widget.setInvalidMessage && widget.setValid) {
-              widget.setInvalidMessage("This is invalid message number " + index + ".");
+              widget.setInvalidMessage(
+                "This is invalid message number " + index + "."
+              );
               widget.setValid(!this.getValue());
             }
           }, this);
@@ -109,8 +107,8 @@ qx.Mixin.define("qxl.widgetbrowser.MControls",
 
       if (options.overflow) {
         let toggleInvalid = new qx.ui.form.ToggleButton("Overflow");
-        toggleInvalid.addListener("changeValue", function(e) {
-          widgets.forEach(function(widget, index) {
+        toggleInvalid.addListener("changeValue", function (e) {
+          widgets.forEach(function (widget, index) {
             widget.toggleOverflow(widget, e.getData());
           }, this);
         });
@@ -119,8 +117,8 @@ qx.Mixin.define("qxl.widgetbrowser.MControls",
 
       if (options.hidesome) {
         var tb = new qx.ui.form.ToggleButton("Hide some");
-        tb.addListener("changeValue", function(e) {
-          widgets.forEach(function(widget, index) {
+        tb.addListener("changeValue", function (e) {
+          widgets.forEach(function (widget, index) {
             if (widget.canHide) {
               e.getData() ? widget.exclude() : widget.show();
             }
@@ -128,6 +126,6 @@ qx.Mixin.define("qxl.widgetbrowser.MControls",
         });
         controls.add(tb);
       }
-    }
-  }
+    },
+  },
 });

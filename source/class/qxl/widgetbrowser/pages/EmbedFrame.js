@@ -30,26 +30,25 @@
  * @asset(qxl/widgetbrowser/blank.html)
  */
 
-qx.Class.define("qxl.widgetbrowser.pages.EmbedFrame",
-{
+qx.Class.define("qxl.widgetbrowser.pages.EmbedFrame", {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function() {
-    this.base(arguments);
+  construct() {
+    super();
 
     this.setLayout(new qx.ui.layout.Canvas(10));
     this.initWidgets();
   },
 
-  members :
-  {
-
-    initWidgets: function() {
+  members: {
+    initWidgets() {
       var widgets = this._widgets;
-      var label; 
-      var left; 
+      var label;
+      var left;
       var right;
-      var url = qx.util.ResourceManager.getInstance().toUri("qxl/widgetbrowser/blank.html");
+      var url = qx.util.ResourceManager.getInstance().toUri(
+        "qxl/widgetbrowser/blank.html"
+      );
 
       var splitPane = new qx.ui.splitpane.Pane("horizontal");
       // remove the background color for a better look
@@ -62,11 +61,12 @@ qx.Class.define("qxl.widgetbrowser.pages.EmbedFrame",
       var iFrame = new qx.ui.embed.Iframe().set({
         source: url,
         width: 300,
-        height: 200
+        height: 200,
       });
+
       widgets.push(iFrame);
-      left.add(label, {top: 0, left: 5});
-      left.add(iFrame, {top: 20, left: 0, right: 0});
+      left.add(label, { top: 0, left: 5 });
+      left.add(iFrame, { top: 20, left: 0, right: 0 });
 
       // ThemedIframe
       label = new qx.ui.basic.Label("ThemedIframe");
@@ -75,14 +75,15 @@ qx.Class.define("qxl.widgetbrowser.pages.EmbedFrame",
       var themedIFrame = new qx.ui.embed.ThemedIframe().set({
         source: url,
         width: 300,
-        height: 200
+        height: 200,
       });
+
       widgets.push(themedIFrame);
-      right.add(label, {top: 0, left: 5});
-      right.add(themedIFrame, {top: 20, left: 0, right: 0});
+      right.add(label, { top: 0, left: 5 });
+      right.add(themedIFrame, { top: 20, left: 0, right: 0 });
 
       splitPane.add(left);
       splitPane.add(right);
-    }
-  }
+    },
+  },
 });

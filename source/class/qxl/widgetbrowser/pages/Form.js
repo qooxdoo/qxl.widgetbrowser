@@ -26,20 +26,18 @@
  *
  * @ignore(qxc)
  */
-qx.Class.define("qxl.widgetbrowser.pages.Form",
-{
+qx.Class.define("qxl.widgetbrowser.pages.Form", {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  statics:
-  {
-    ITEM_SIZE: 3
+  statics: {
+    ITEM_SIZE: 3,
   },
 
-  construct : function() {
-    this.base(arguments);
+  construct() {
+    super();
 
     var formItems = new qxl.formdemo.FormItems();
     this._widgets = formItems.getWidgets();
     this.add(formItems);
-  }
+  },
 });

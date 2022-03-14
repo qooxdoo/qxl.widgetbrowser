@@ -34,12 +34,11 @@
  *
  */
 
-qx.Class.define("qxl.widgetbrowser.pages.Tree",
-{
+qx.Class.define("qxl.widgetbrowser.pages.Tree", {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function() {
-    this.base(arguments);
+  construct() {
+    super();
 
     this.__grid = new qx.ui.container.Composite(new qx.ui.layout.Grid(10));
     this.add(this.__grid);
@@ -47,45 +46,49 @@ qx.Class.define("qxl.widgetbrowser.pages.Tree",
     this.initWidgets();
   },
 
-  members :
-  {
+  members: {
+    __grid: null,
 
-    __grid : null,
-
-    initWidgets: function() {
+    initWidgets() {
       var label;
       var widgets = this._widgets;
 
       // Tree
       label = new qx.ui.basic.Label("Tree");
-      this.__grid.add(label, {row: 0, column: 0});
+      this.__grid.add(label, { row: 0, column: 0 });
       var tree = this.__getTree();
-      this.__grid.add(tree, {row: 1, column: 0});
+      this.__grid.add(tree, { row: 1, column: 0 });
       widgets.push(tree);
 
       // VirtualTree
       label = new qx.ui.basic.Label("VirtualTree");
-      label.setToolTip(new qx.ui.tooltip.ToolTip(
-        "Virtual implementation of Tree. Shares appearance."));
-      this.__grid.add(label, {row: 0, column: 1});
+      label.setToolTip(
+        new qx.ui.tooltip.ToolTip(
+          "Virtual implementation of Tree. Shares appearance."
+        )
+      );
+      this.__grid.add(label, { row: 0, column: 1 });
       var virtualTree = this.__getVirtualTree();
-      this.__grid.add(virtualTree, {row: 1, column: 1});
+      this.__grid.add(virtualTree, { row: 1, column: 1 });
       widgets.push(virtualTree);
 
       // TreeVirtual
       label = new qx.ui.basic.Label("TreeVirtual (Legacy)");
-      label.setToolTip(new qx.ui.tooltip.ToolTip(
-        "Inherits from qx.ui.table.Table. Suited for multi-column trees."));
-      this.__grid.add(label, {row: 0, column: 2});
+      label.setToolTip(
+        new qx.ui.tooltip.ToolTip(
+          "Inherits from qx.ui.table.Table. Suited for multi-column trees."
+        )
+      );
+      this.__grid.add(label, { row: 0, column: 2 });
       var treeVirtual = this.__getTreeVirtual();
-      this.__grid.add(treeVirtual, {row: 1, column: 2});
+      this.__grid.add(treeVirtual, { row: 1, column: 2 });
       widgets.push(treeVirtual);
     },
 
-    __getTree : function() {
+    __getTree() {
       var tree = new qx.ui.tree.Tree().set({
-        width : 200,
-        height : 400
+        width: 200,
+        height: 400,
       });
 
       var root = new qx.ui.tree.TreeFolder("root");
@@ -102,12 +105,9 @@ qx.Class.define("qxl.widgetbrowser.pages.Tree",
       var te1_4 = new qx.ui.tree.TreeFolder("Trash");
       te1.add(te1_1, te1_2, te1_3, te1_4);
 
-
       var te1_2_1 = new qx.ui.tree.TreeFile("Windows (C:)");
       var te1_2_2 = new qx.ui.tree.TreeFile("Documents (D:)");
       te1_2.add(te1_2_1, te1_2_2);
-
-
 
       var te2 = new qx.ui.tree.TreeFolder("Inbox");
 
@@ -115,7 +115,7 @@ qx.Class.define("qxl.widgetbrowser.pages.Tree",
       var te2_2 = new qx.ui.tree.TreeFolder("Sent");
       var te2_3 = new qx.ui.tree.TreeFolder("Trash");
 
-      for (var i=0; i<30; i++) {
+      for (var i = 0; i < 30; i++) {
         te2_3.add(new qx.ui.tree.TreeFile("Junk #" + i));
       }
 
@@ -129,10 +129,10 @@ qx.Class.define("qxl.widgetbrowser.pages.Tree",
       return tree;
     },
 
-    __getVirtualTree: function() {
+    __getVirtualTree() {
       var tree = new qx.ui.tree.VirtualTree(null, "name", "children").set({
-        width : 200,
-        height : 400
+        width: 200,
+        height: 400,
       });
 
       var url = "qxl/widgetbrowser/tree.json";
@@ -140,20 +140,23 @@ qx.Class.define("qxl.widgetbrowser.pages.Tree",
 
       store.bind("model", tree, "model");
 
-      store.addListener("loaded", function() {
-        tree.openNode(tree.getModel().getChildren().getItem(0));
-      }, this);
+      store.addListener(
+        "loaded",
+        function () {
+          tree.openNode(tree.getModel().getChildren().getItem(0));
+        },
+        this
+      );
 
       return tree;
     },
 
-    __getTreeVirtual: function() {
+    __getTreeVirtual() {
       var tree = new qx.ui.treevirtual.TreeVirtual("TreeVirtual");
       tree.setWidth(200);
       var dataModel = tree.getDataModel();
 
-      var te2 = dataModel.addBranch(
-        null, "Inbox", true, false);
+      var te2 = dataModel.addBranch(null, "Inbox", true, false);
 
       var te = dataModel.addBranch(te2, "Spam", false);
 
@@ -169,6 +172,6 @@ qx.Class.define("qxl.widgetbrowser.pages.Tree",
       dataModel.setData();
 
       return tree;
-    }
-  }
+    },
+  },
 });

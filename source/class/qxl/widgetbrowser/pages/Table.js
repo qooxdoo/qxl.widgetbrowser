@@ -38,23 +38,20 @@
  * @asset(qx/icon/${qx.icontheme}/16/apps/office-calendar.png)
  */
 
-qx.Class.define("qxl.widgetbrowser.pages.Table",
-{
+qx.Class.define("qxl.widgetbrowser.pages.Table", {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function() {
-    this.base(arguments);
+  construct() {
+    super();
 
     this.initWidgets();
   },
 
-  members :
-  {
-
+  members: {
     __nextId: 0,
 
-    initWidgets: function() {
-      var widgets = this._widgets = new qx.type.Array();
+    initWidgets() {
+      var widgets = (this._widgets = new qx.type.Array());
 
       var table = this.__createTable();
       table.setFocusedCell(2, 5);
@@ -62,11 +59,11 @@ qx.Class.define("qxl.widgetbrowser.pages.Table",
       this.add(table);
     },
 
-    __createTable : function() {
+    __createTable() {
       var rowData = this.__createRandomRows(500);
 
       var tableModel = new qx.ui.table.model.Simple();
-      tableModel.setColumns([ "ID", "A number", "A date", "Boolean" ]);
+      tableModel.setColumns(["ID", "A number", "A date", "Boolean"]);
       tableModel.setData(rowData);
       tableModel.setColumnEditable(1, true);
       tableModel.setColumnEditable(2, true);
@@ -77,28 +74,43 @@ qx.Class.define("qxl.widgetbrowser.pages.Table",
       table.set({
         width: 600,
         height: 400,
-        decorator : null
+        decorator: null,
       });
 
-      table.getSelectionModel().setSelectionMode(qx.ui.table.selection.Model.MULTIPLE_INTERVAL_SELECTION);
+      table
+        .getSelectionModel()
+        .setSelectionMode(
+          qx.ui.table.selection.Model.MULTIPLE_INTERVAL_SELECTION
+        );
 
       var tcm = table.getTableColumnModel();
 
       tcm.setDataCellRenderer(3, new qx.ui.table.cellrenderer.Boolean());
-      tcm.setHeaderCellRenderer(2, new qx.ui.table.headerrenderer.Icon("icon/16/apps/office-calendar.png", "A date"));
+      tcm.setHeaderCellRenderer(
+        2,
+        new qx.ui.table.headerrenderer.Icon(
+          "icon/16/apps/office-calendar.png",
+          "A date"
+        )
+      );
 
       return table;
     },
 
-    __createRandomRows : function(rowCount) {
+    __createRandomRows(rowCount) {
       var rowData = [];
       var now = new Date().getTime();
       var dateRange = 400 * 24 * 60 * 60 * 1000; // 400 days
       for (var row = 0; row < rowCount; row++) {
         var date = new Date(now + Math.random() * dateRange - dateRange / 2);
-        rowData.push([ this.__nextId++, Math.random() * 10000, date, (Math.random() > 0.5) ]);
+        rowData.push([
+          this.__nextId++,
+          Math.random() * 10000,
+          date,
+          Math.random() > 0.5,
+        ]);
       }
       return rowData;
-    }
-  }
+    },
+  },
 });

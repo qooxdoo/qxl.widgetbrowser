@@ -16,25 +16,23 @@
 
 ************************************************************************ */
 
-qx.Class.define("qxl.widgetbrowser.pages.AbstractPage",
-{
+qx.Class.define("qxl.widgetbrowser.pages.AbstractPage", {
   type: "abstract",
 
   extend: qx.ui.container.Composite,
 
-  construct : function() {
-    this.base(arguments);
+  construct() {
+    super();
     this.setLayout(new qx.ui.layout.Canvas());
 
     this._widgets = new qx.type.Array();
   },
 
-  members :
-  {
+  members: {
     _widgets: null,
 
-    getWidgets: function() {
+    getWidgets() {
       return this._widgets;
-    }
-  }
+    },
+  },
 });

@@ -30,41 +30,46 @@
  *
  */
 
-qx.Class.define("qxl.widgetbrowser.pages.Basic",
-{
+qx.Class.define("qxl.widgetbrowser.pages.Basic", {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function() {
-    this.base(arguments);
+  construct() {
+    super();
 
-    var hbox = this.__hbox = new qx.ui.container.Composite(new qx.ui.layout.HBox(10));
-    this.add(hbox, {top: 0});
+    var hbox = (this.__hbox = new qx.ui.container.Composite(
+      new qx.ui.layout.HBox(10)
+    ));
+    this.add(hbox, { top: 0 });
 
     this.initWidgets();
   },
 
-  members :
-  {
-
+  members: {
     __hbox: null,
 
-    initWidgets: function() {
+    initWidgets() {
       var widgets = this._widgets;
 
       // Label
-      var label = new qx.ui.basic.Label("Label").set({alignY: "middle"});
+      var label = new qx.ui.basic.Label("Label").set({ alignY: "middle" });
       widgets.push(label);
       this.__hbox.add(label);
 
       // Image
-      var image = new qx.ui.basic.Atom("Image", "icon/32/status/dialog-information.png");
+      var image = new qx.ui.basic.Atom(
+        "Image",
+        "icon/32/status/dialog-information.png"
+      );
       widgets.push(image);
       this.__hbox.add(image);
 
       // Atom
-      var atom = new qx.ui.basic.Atom("Atom", "icon/32/status/dialog-information.png");
+      var atom = new qx.ui.basic.Atom(
+        "Atom",
+        "icon/32/status/dialog-information.png"
+      );
       widgets.push(atom);
       this.__hbox.add(atom);
-    }
-  }
+    },
+  },
 });

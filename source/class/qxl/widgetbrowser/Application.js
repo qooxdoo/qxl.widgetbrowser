@@ -20,25 +20,22 @@
  * Main Application.
  * @asset(qx/icon/*)
  */
-qx.Class.define("qxl.widgetbrowser.Application",
-{
-  extend : qx.application.Standalone,
+qx.Class.define("qxl.widgetbrowser.Application", {
+  extend: qx.application.Standalone,
 
-
-  construct: function() {
-    this.base(arguments);
+  construct() {
+    super();
   },
 
-  members:
-  {
+  members: {
     __header: null,
 
     __tabs: null,
 
     __scroll: null,
 
-    main: function() {
-      this.base(arguments);
+    main() {
+      super.main();
 
       // Enable logging in debug variant
       if (qx.core.Environment.get("qx.debug")) {
@@ -51,29 +48,30 @@ qx.Class.define("qxl.widgetbrowser.Application",
       var doc = this.getRoot();
       var dockLayout = new qx.ui.layout.Dock();
       var dockLayoutComposite = new qx.ui.container.Composite(dockLayout);
-      doc.add(dockLayoutComposite, {edge:0});
+      doc.add(dockLayoutComposite, { edge: 0 });
 
       this.__header = new qxl.widgetbrowser.view.Header();
-      dockLayoutComposite.add(this.__header, {edge: "north"});
+      dockLayoutComposite.add(this.__header, { edge: "north" });
 
-      var scroll = this.__scroll = new qx.ui.container.Scroll();
+      var scroll = (this.__scroll = new qx.ui.container.Scroll());
       dockLayoutComposite.add(scroll);
 
       this.__tabs = this._createTabView();
       this.__tabs.set({
         minWidth: 700,
-        padding: 15
+        padding: 15,
       });
+
       scroll.add(this.__tabs);
     },
 
-    _createTabView: function() {
+    _createTabView() {
       this.__tabs = new qxl.widgetbrowser.view.TabView();
       return this.__tabs;
     },
 
-    getScroll: function() {
+    getScroll() {
       return this.__scroll;
-    }
-  }
+    },
+  },
 });

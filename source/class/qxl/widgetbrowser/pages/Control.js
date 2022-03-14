@@ -25,25 +25,23 @@
  *
  */
 
-qx.Class.define("qxl.widgetbrowser.pages.Control",
-{
+qx.Class.define("qxl.widgetbrowser.pages.Control", {
   extend: qxl.widgetbrowser.pages.AbstractPage,
 
-  construct: function() {
-    this.base(arguments);
+  construct() {
+    super();
 
     this.__vbox = new qx.ui.container.Composite(new qx.ui.layout.VBox(20));
-    this.add(this.__vbox, {top: 0});
+    this.add(this.__vbox, { top: 0 });
 
     this.initWidgets();
   },
 
-  members:
-  {
+  members: {
     __vbox: null,
 
-    initWidgets: function() {
-      var widgets = this._widgets = new qx.type.Array();
+    initWidgets() {
+      var widgets = (this._widgets = new qx.type.Array());
       var label;
 
       // ColorSelector
@@ -58,21 +56,23 @@ qx.Class.define("qxl.widgetbrowser.pages.Control",
       var colorPopup = new qx.ui.control.ColorPopup();
       colorPopup.exclude();
 
-      var openColorPopup = new qx.ui.form.Button("Open Color Popup").set({maxWidth: 150});
+      var openColorPopup = new qx.ui.form.Button("Open Color Popup").set({
+        maxWidth: 150,
+      });
       widgets.push(openColorPopup);
       this.__vbox.add(label);
       this.__vbox.add(openColorPopup);
-      openColorPopup.addListener("execute", function() {
+      openColorPopup.addListener("execute", function () {
         colorPopup.placeToWidget(openColorPopup, true);
         colorPopup.show();
       });
 
       // DateChooser
-      var dateChooser = new qx.ui.control.DateChooser().set({maxWidth: 240});
+      var dateChooser = new qx.ui.control.DateChooser().set({ maxWidth: 240 });
       label = new qx.ui.basic.Label("DateChooser");
       widgets.push(dateChooser);
       this.__vbox.add(label);
       this.__vbox.add(dateChooser);
-    }
-  }
+    },
+  },
 });

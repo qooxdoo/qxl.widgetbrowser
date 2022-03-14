@@ -20,9 +20,8 @@
  * The Application's header
  */
 
-qx.Class.define("qxl.widgetbrowser.view.Header",
-{
-  extend : qx.ui.container.Composite,
+qx.Class.define("qxl.widgetbrowser.view.Header", {
+  extend: qx.ui.container.Composite,
 
   /*
   *****************************************************************************
@@ -33,8 +32,8 @@ qx.Class.define("qxl.widgetbrowser.view.Header",
   /**
    * @ignore(qxc)
    */
-  construct : function() {
-    this.base(arguments);
+  construct() {
+    super();
 
     this.setLayout(new qx.ui.layout.HBox());
     this.setAppearance("app-header");
@@ -72,7 +71,7 @@ qx.Class.define("qxl.widgetbrowser.view.Header",
       var selected = evt.getData()[0].getUserData("value");
       var theme = qx.Theme.getByName(selected);
       if (theme) {
-          qx.theme.manager.Meta.getInstance().setTheme(theme);
+        qx.theme.manager.Meta.getInstance().setTheme(theme);
       }
     });
 
@@ -83,9 +82,9 @@ qx.Class.define("qxl.widgetbrowser.view.Header",
 
     // Finally assemble header
     this.add(title);
-    this.add(new qx.ui.core.Spacer(), {flex : 1});
+    this.add(new qx.ui.core.Spacer(), { flex: 1 });
     this.add(select);
-    this.add(new qx.ui.core.Spacer(), {width: "2%"});
+    this.add(new qx.ui.core.Spacer(), { width: "2%" });
     this.add(version);
-  }
+  },
 });
