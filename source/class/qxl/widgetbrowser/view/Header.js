@@ -65,7 +65,7 @@ qx.Class.define("qxl.widgetbrowser.view.Header", {
       }
     }
     select.setFont("default");
-    select.setTextColor("black");
+    select.setTextColor(null);
     select.setWidth(250);
     select.addListener("changeSelection", function (evt) {
       var selected = evt.getData()[0].getUserData("value");
@@ -73,6 +73,7 @@ qx.Class.define("qxl.widgetbrowser.view.Header", {
       if (theme) {
         qx.theme.manager.Meta.getInstance().setTheme(theme);
       }
+      this.close();
     });
 
     // Set current theme
