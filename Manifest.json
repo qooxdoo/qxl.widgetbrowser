@@ -7,7 +7,7 @@
     "homepage": "http://demo.qooxdoo.org/current/widgetbrowser",
     "license": "MIT",
     "authors": [],
-    "version": "2.0.1"
+    "version": "2.0.2"
   },
   "provides": {
     "namespace": "qxl.widgetbrowser",
