@@ -42,8 +42,8 @@
  * toolbar.SplitButton
  * toolbar.ToolBar
  *
- * @asset(qx/iconfont/MaterialIcons/*)
- *
+ * @usefont(MaterialIcons)
+ * @asset(qx/icon/${qx.icontheme}/16/actions/document-new.png)
  */
 
 qx.Class.define("qxl.widgetbrowser.pages.ToolBar", {
